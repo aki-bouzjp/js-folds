@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle folds",
+        "command": "js-folds:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "js-folds",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "js-folds:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

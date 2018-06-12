@@ -1,0 +1,19 @@
+{
+  "name": "js-folds",
+  "main": "./lib/js-folds",
+  "version": "1.1.0",
+  "description": "It is a plugin for recording and sharing project folds",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "js-folds:toggle"
+  },
+  "activationEvents": [
+    "js-folds:toggle"
+  ],
+  "repository": "https://github.com/aki-bouzjp/js-folds.git",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}
