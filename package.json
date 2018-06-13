@@ -4,12 +4,6 @@
   "version": "1.4.1",
   "description": "It is a plugin for recording and sharing project folds",
   "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "js-folds:toggle"
-  },
-  "activationEvents": [
-    "js-folds:toggle"
-  ],
   "repository": "https://github.com/aki-bouzjp/js-folds.git",
   "license": "MIT",
   "engines": {
