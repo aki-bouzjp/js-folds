@@ -1,43 +1,43 @@
 'use babel';
 
-import Folds from '../lib/folds';
+import JsFolds from '../lib/js-folds';
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
 // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe('Folds', () => {
+describe('JsFolds', () => {
   let workspaceElement, activationPromise;
 
   beforeEach(() => {
     workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('folds');
+    activationPromise = atom.packages.activatePackage('js-folds');
   });
 
-  describe('when the folds:toggle event is triggered', () => {
+  describe('when the js-folds:toggle event is triggered', () => {
     it('hides and shows the modal panel', () => {
       // Before the activation event the view is not on the DOM, and no panel
       // has been created
-      expect(workspaceElement.querySelector('.folds')).not.toExist();
+      expect(workspaceElement.querySelector('.js-folds')).not.toExist();
 
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'folds:toggle');
+      atom.commands.dispatch(workspaceElement, 'js-folds:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.folds')).toExist();
+        expect(workspaceElement.querySelector('.js-folds')).toExist();
 
-        let foldsElement = workspaceElement.querySelector('.folds');
+        let foldsElement = workspaceElement.querySelector('.js-folds');
         expect(foldsElement).toExist();
 
         let foldsPanel = atom.workspace.panelForItem(foldsElement);
         expect(foldsPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'folds:toggle');
+        atom.commands.dispatch(workspaceElement, 'js-folds:toggle');
         expect(foldsPanel.isVisible()).toBe(false);
       });
     });
@@ -51,11 +51,11 @@ describe('Folds', () => {
       // workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement);
 
-      expect(workspaceElement.querySelector('.folds')).not.toExist();
+      expect(workspaceElement.querySelector('.js-folds')).not.toExist();
 
       // This is an activation event, triggering it causes the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'folds:toggle');
+      atom.commands.dispatch(workspaceElement, 'js-folds:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
@@ -63,9 +63,9 @@ describe('Folds', () => {
 
       runs(() => {
         // Now we can test for view visibility
-        let foldsElement = workspaceElement.querySelector('.folds');
+        let foldsElement = workspaceElement.querySelector('.js-folds');
         expect(foldsElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'folds:toggle');
+        atom.commands.dispatch(workspaceElement, 'js-folds:toggle');
         expect(foldsElement).not.toBeVisible();
       });
     });
