@@ -1,7 +1,7 @@
 {
   "name": "js-folds",
   "main": "./lib/js-folds",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "It is a plugin for recording and sharing project folds",
   "keywords": [],
   "repository": "https://github.com/aki-bouzjp/js-folds.git",
